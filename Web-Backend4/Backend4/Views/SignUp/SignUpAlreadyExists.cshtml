@@ -1,0 +1,51 @@
+﻿@using Backend4.Models.Controls
+@model Backend4.Models.SignUp.SignUpFirstPageViewModel
+@{
+    ViewBag.Title = "Sign up";
+    var allMonths = ViewBag.AllMonths as Month[];
+    var montsMap = allMonths.ToDictionary(x => x.Id);
+}
+
+<h2>Sign up</h2>
+<p>User with same profile data already exists. Are you sure you want to sign up?</p>
+
+<form asp-action="SignUpAlreadyExists" class="form-horizontal">
+    <input type="hidden" asp-for="@Model.FirstName" />
+    <input type="hidden" asp-for="@Model.LastName" />
+    <input type="hidden" asp-for="@Model.Day" />
+    <input type="hidden" asp-for="@Model.Month.Id" />
+    <input type="hidden" asp-for="@Model.Month.Name" />
+    <input type="hidden" asp-for="@Model.Gender" />
+    <input type="hidden" asp-for="@Model.Year" />
+
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">FirstName</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.FirstName</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Last name</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.LastName</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <p class="form-control-static">@montsMap[Model.Month.Id].Name @Model.Day, @Model.Year</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.Gender</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button type="submit" class="btn btn-primary">Sign up anyway</button>
+        </div>
+    </div>
+</form>

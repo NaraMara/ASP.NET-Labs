@@ -1,0 +1,75 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Hello Forms";
+}
+
+<h1>Calculator</h1>
+<form asp-action="ManualWithSeparateHandlers">
+    <div class="form-inline">
+        @if (ViewBag.Error == null)
+        {
+            <input type="number" name="First" class="form-control " value="@ViewBag.value1" />
+            <select class="form-control" name="Operator">
+                <option value="-">-</option>
+                <option value="+">+</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" name="Second" class="form-control" value="@ViewBag.value2" />
+            <button type="submit" class="btn btn-primary form-control">Calculate </button>
+            <span>=@ViewBag.Result</span>
+        }
+        else
+        {
+            @if (ViewBag.ErrorType == 1)
+            {
+                @if (ViewBag.flag1)
+                {
+                    <input type="text" name="First" class="form-control input-validation-error " value="@ViewBag.value1" />
+                    <span class="  field-validation-error">First operand is required</span>
+                }
+                else
+                {
+                    <input type="text" name="First" class="form-control" value="@ViewBag.value1" />
+
+                }
+
+                <select class="form-control" name="Operator">
+                    <option value="-">-</option>
+                    <option value="+">+</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                @if (ViewBag.flag2)
+                {
+                    <input type="number" name="Second" class="form-control input-validation-error " value="@ViewBag.value2" />
+                    <span class="  field-validation-error">First operand is required</span>
+                }
+                else
+                {
+                    <input type="number" name="Second" class="form-control" value="@ViewBag.value2" />
+
+                }
+
+                <button type="submit" class="btn btn-primary form-control">Calculate </button>
+                <span>=</span>
+            }
+            @if (ViewBag.ErorType == 0)
+            {
+                <input type="number" name="First" class="form-control " value="@ViewBag.value1" />
+                <select class="form-control" name="Operator">
+                    <option value="-">-</option>
+                    <option value="+">+</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" name="Second" class="form-control input-validation-error" value="@ViewBag.value2" />
+                <span class="field-validation-error">Division by zero is forbidden </span>
+                <button type="submit" class="btn btn-primary form-control">Calculate </button>
+                <span>=</span>
+            }
+
+        }
+    </div>
+
+</form>

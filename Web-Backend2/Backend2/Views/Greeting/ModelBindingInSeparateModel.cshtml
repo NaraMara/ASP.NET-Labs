@@ -1,0 +1,24 @@
+﻿@model Backend2.Models.MainViewModel
+@{
+    ViewBag.Title = "Hello Forms";
+}
+
+<h2>What is your name?</h2>
+
+<form asp-action="ModelBindingInSeparateModel" class="form-inline">
+     
+        <input type="number" asp-for="First" class="form-control " value="@Model?.First" />
+        <span asp-validation-for="First"></span>
+        <select class="form-control" asp-for="Operator">
+            <option value="-">-</option>
+            <option value="+">+</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" asp-for="Second" class="form-control" value="@Model?.Second" />
+        <span asp-validation-for="Second"></span>
+        <button type="submit" class="btn btn-primary form-control">Calculate </button>
+        <span>=@Model?.Result</span>
+     
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

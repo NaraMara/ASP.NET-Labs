@@ -1,0 +1,14 @@
+﻿@model Backend1.Models.NumbersModel
+@{
+    ViewBag.Title = "Pass using Model";
+}
+
+<h2>Current Date & Time</h2>
+<dl class="dl-horizontal">
+   <dd> Первое число :@Model.FirstNumber</dd>
+    <dd>Второе число : @Model.SecondNumber</dd>
+    <dd> Сумма : @Model.Sum</dd>
+    <dd>Разность :@Model.Substruct</dd>
+    <dd>Умножение :@Model.Multyply</dd>
+    <dd>Деление  :@Model.Divide</dd>
+</dl>

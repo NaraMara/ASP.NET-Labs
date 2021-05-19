@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Backend6.Models.ForumCategory>
+@{ ViewBag.Title = "Forum";
+    var isAdmin = User.IsInRole(ApplicationRoles.Administrators);
+
+ }
+
+<h2>Forum</h2>
+
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default forum-category">
+        <div class="panel-heading">
+            <strong>Category @item.Name</strong>
+            @if (isAdmin)
+            {
+                <span>
+                    | <a asp-action="Edit" asp-route-Id="@item.Id">Edit</a>
+                    | <a asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                    | <a asp-action="Create" asp-controller="Forum" asp-route-categoryId="@item.Id">Create forum</a>
+                </span>
+            }
+            
+        </div>
+        <table class="table table-striped">
+            <tbody>
+                @foreach (var forum in item.Forums)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Index" asp-controller="Forum" asp-route-Id="@forum.Id" class="forum-name">@forum.Name</a>
+                           @if (isAdmin)
+                           {<span>
+                               | <a asp-action="Edit" asp-controller="Forum" asp-route-Id="@forum.Id">Edit</a>
+                               | <a asp-action="Delete" asp-controller="Forum" asp-route-Id="@forum.Id">Delete</a>
+                            </span>
+                           }
+                            <p>@forum.Description</p>
+                        </td>
+                        <td style="width: 150px">  @forum.ForumTopics.Count topic</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@if (User.IsInRole(ApplicationRoles.Administrators))
+{
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a asp-action="Create">Create new category</a>
+    </div>
+</div>}

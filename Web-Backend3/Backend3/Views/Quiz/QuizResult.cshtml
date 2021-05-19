@@ -1,0 +1,21 @@
+﻿@model Backend3.Models.QuizModel
+@{
+    ViewBag.Title = "Hello Quiz";
+}
+
+<h2>Quiz results</h2>
+
+<p>
+    <strong>Correct answers: </strong> @Model.RightAnswCount/ @Model.Questions.Count
+</p>
+<p>
+    <ol>
+        @foreach (var answ in Model.Questions)
+        {
+            @if (answ.isCorrect)
+            { <li>@answ.FirstNumber @answ.Operator @answ.SecondNumber = @answ.Answer</li>}
+            else
+            {<li class="text-danger">@answ.FirstNumber @answ.Operator @answ.SecondNumber = @answ.Answer</li>}
+        }
+    </ol>
+</p>

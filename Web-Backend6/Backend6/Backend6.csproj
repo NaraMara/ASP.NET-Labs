@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Backend6-4fd1b34e-3551-4869-9119-f7b6184396dc</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210407211427_AddForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210407211427_AddForumCategories.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407215532_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210407215532_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407220547_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210407220547_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407222124_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210407222124_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407222519_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210407222519_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407225701_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210407225701_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407230212_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210407230212_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407231310_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210407231310_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407232353_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210407232353_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407233304_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210407233304_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407234222_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210407234222_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210407234540_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210407234540_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210408111831_BoldFix.cs" />
+    <Compile Remove="Data\Migrations\20210408111831_BoldFix.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\test\" />
+  </ItemGroup>
+
+</Project>

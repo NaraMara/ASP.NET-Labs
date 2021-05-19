@@ -1,0 +1,15 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Pass using ViewData";
+}
+
+<h2>Current Date & Time</h2>
+<dl class="dl-horizontal">
+
+    <dd> Первое число :@ViewData["First"]</dd>
+    <dd>Второе число : @ViewData["Second"]</dd>
+    <dd> Сумма : @ViewData["Sum"]</dd>
+    <dd>Разность :@ViewData["Substruct"]</dd>
+    <dd>Умножение :@ViewData["Multyply"]</dd>
+    <dd>Деление  :@ViewData["Divide"]</dd>
+</dl>

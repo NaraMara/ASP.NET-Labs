@@ -1,0 +1,43 @@
+﻿@model Backend3.Models.QuizModel
+@{
+    ViewBag.Title = "Hello Quiz";
+}
+
+<h2>Quiz</h2>
+
+<form asp-action="Quiz" class="form-horizontal">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="CurrentCount" />
+
+
+
+    @if (Model.Questions != null)
+    {
+        <input type="hidden" asp-for="@Model.NewQuestion.FirstNumber" />
+        <input type="hidden" asp-for="@Model.NewQuestion.SecondNumber" />
+         
+        <input type="hidden" asp-for="@Model.NewQuestion.Operator" />
+        for (var i = 0; i < Model.Questions.Count; i++)
+        {
+            <input type="hidden" asp-for="@Model.Questions[i].Answer" />
+            <input type="hidden" asp-for="@Model.Questions[i].FirstNumber" />
+            <input type="hidden" asp-for="@Model.Questions[i].SecondNumber" />
+            <input type="hidden" asp-for="@Model.Questions[i].Operator" />
+        }
+    }
+    <div class="form-group">
+        <label class="col-md-2 control-label">@Model.NewQuestion.FirstNumber @Model.NewQuestion.Operator @Model.NewQuestion.SecondNumber = </label>
+        <div class="col-md-10">
+            <input type="number" asp-for="@Model.NewQuestion.Answer" class="form-control" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button type="submit" name="Action" class="btn btn-default" value="Submit">Submit</button>
+            <button type="submit" name="Action" class="btn btn-primary" value="Finish">Finish</button>
+        </div>
+    </div>
+
+
+
+</form>

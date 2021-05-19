@@ -1,0 +1,51 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Hello Forms";
+}
+
+<h1>Calculator</h1>
+<form asp-action="Manual">
+    <div class="form-inline">
+        @if (ViewBag.Error == null)
+        {
+            <input type="number" name="First" class="form-control " />
+            <select class="form-control" name="Operator">
+                <option value="-">-</option>
+                <option value="+">+</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="Second" class="form-control" />
+            <button type="submit" class="btn btn-primary form-control">Calculate </button>
+            <span>=</span>
+        }
+        else
+        {
+            @if (ViewBag.ErrorType == 1)
+            {
+                @if (ViewBag.first1)
+                {
+                    <input type="number" name="First" class="form-control input-validation-error " />
+                    <span class="form-control input-validation-error">First operand is required</span>
+                }
+                else
+                {
+                    <input type="number" name="First" class="form-control  " />
+                     
+                }
+
+                <select class="form-control" name="Operator">
+                    <option value="-">-</option>
+                    <option value="+">+</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" name="Second" class="form-control" />
+                <button type="submit" class="btn btn-primary form-control">Calculate </button>
+                <span>=</span>
+            }
+            <span class="form-control input-validation-error">WTF?</span>
+        }
+    </div>
+     
+</form>
