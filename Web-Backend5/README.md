@@ -1,58 +1,21 @@
-﻿# Запуск проекта в Visual Studio 2017
+Изученные темы:
+<ol data-sourcepos="5:1-7:0" dir="auto">
+<li data-sourcepos="5:1-5:90">Моделирование предметной области в Entity Framework Core</li>
+<li data-sourcepos="6:1-7:0">CRUD-контроллеры</li>
+</ol>
 
-## Необходимые инструменты
 
-1. Visual Studio 2017  
-   Версия: 15.7.1  
-   Установленные Workload-ы: ASP.NET and web development, .NET Core cross-platform development  
-   Редакции: Community (бесплатная) / Professional / Enterprise  
-   Язык: английский  
-   Скачать можно тут: https://www.visualstudio.com/downloads/
+Выполненные задачи:
+<ol data-sourcepos="10:1-15:0" dir="auto">
+<li data-sourcepos="10:1-10:74">Ознакомиться с заготовленным проектом</li>
+<li data-sourcepos="11:1-15:0">Завершить реализацию приведенной ниже предметной области:
+<ol data-sourcepos="12:4-15:0">
+<li data-sourcepos="12:4-12:132">Создать классы, реализующие модель предметной области в Entity Framework Core.</li>
+<li data-sourcepos="13:4-13:75">Добавить миграции для данных классов.</li>
+<li data-sourcepos="14:4-15:0">Реализовать контроллеры для CRUD-а объектов классов.</li>
+</ol>
+</li>
+</ol>
 
-## Запуск проекта
 
-1. Откройте панель Team Explorer (Ctrl + \\, Ctrl + M)
-2. Если на данный момент открыт другой репозиторий - нажмите Manage Connections
-3. В разделе Local Git Repositories нажмите Clone
-4. В появившемся окне укажите адрес репозитория, а также путь, куда его необходимо склонировать и нажмите Clone
-5. Откройте склонированный репозиторий в Local Git Repositories
-6. В разделе Solutions выберите нужный солюшен и откройте его
 
-# Запуск проекта в Visual Studio Code
-
-## Необходимые инструменты
-
-1. Visual Studio Code  
-   Версия: 1.23.0  
-   Скачать можно тут: https://code.visualstudio.com/
-2. .NET Core SDK  
-   Версия SDK: 2.0.3  
-   Версия .NET Core: 2.0.7  
-   Скачать можно тут: https://www.microsoft.com/net/download/core
-
-## Запуск проекта
-
-Для того, чтобы склонировать и запустить проект нужно выполнить в командной строке следующие команды (Windows):
-
-```
-git clone <Repository Url>
-cd .\Web-Backend5\Backend5
-dotnet restore
-cd ..
-code .
-```
-
-Для других платформ потребуется изменить формат путей, а так же некоторые инструменты могут быть не добавлены в PATH
-
-При первом запуске возможно потребуется установка дополнительных расширений к Visual Studio Code
-
-1. C# for Visual Studio Code
-   1. Откройте раздел Extensions (Ctrl+Shift+X)
-   2. В поиске введите: C#
-   3. В появившейся выдаче найдите C# for Visual Studio Code от Microsoft и нажмите Install
-   4. После установки нажмите Enable и перезапустите Visual Studio Code
-2. .NET Core Debugger
-   1. Нажмите Ctrl+Shift+P
-   2. Начните набирать: Download .NET Core Debugger
-   3. Как только в автокомплите появится данный пункт - нажмите его
-   4. Для надежности перезапустите Visual Studio Code
